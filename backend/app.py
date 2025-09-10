@@ -53,6 +53,9 @@ from utils import calculate_bmi, data_encoding # type: ignore
 app = Flask(__name__, template_folder=r"../frontend/templates", static_folder=r"../frontend/statics")
 
 MODEL_PATH = Path(__file__).resolve().parent / "model.pkl"
+
+globals()['np'] = np
+
 try:
     # Load the model
     with open(MODEL_PATH, mode="rb") as f:
