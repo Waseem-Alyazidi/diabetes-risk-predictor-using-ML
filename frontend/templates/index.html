@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes Risk Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Diabetes Risk Predictor</h1>
+        <p>Enter your health details below to estimate your diabetes risk level.</p>
+        <form id="risk-form">
+            <div class="form-group">
+                <input type="number" name="age" placeholder="Age" required>
+            </div>
+            <div class="form-group">
+                <input type="number" name="height" placeholder="Height (cm)" required>
+            </div>
+            <div class="form-group">
+                <input type="number" name="weight" placeholder="Weight (kg)" required>
+            </div>
+            <div class="form-group">
+                <input type="number" name="bp" placeholder="Blood Pressure" required>
+            </div>
+            <div class="form-group">
+                <input type="number" name="glucose" placeholder="Glucose" required>
+            </div>
+            <div class="form-group">
+                <select name="activity" required>
+                    <option value="" disabled selected>Activity Level</option>
+                    <option value="low">Low</option>
+                    <option value="normal">Normal</option>
+                    <option value="high">High</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <select name="diet" required>
+                    <option value="" disabled selected>Diet Type</option>
+                    <option value="unhealthy">Unhealthy</option>
+                    <option value="normal">Normal</option>
+                    <option value="healthy">Healthy</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <select name="family_history" required>
+                    <option value="" disabled selected>Family History</option>
+                    <option value="no">No</option>
+                    <option value="yes">Yes</option>
+                </select>
+            </div>
+            <button type="submit">Predict Risk</button>
+        </form>
+        <div id="result"></div>
+
+        <footer class="footer">
+            <p class="disclaimer">
+                ⚠️ Note: This prediction model is for educational purposes only and may not be 100% accurate.
+            </p>
+            <p class="copyright">
+                &copy; 2025 Waseem Alyazidi. All rights reserved.
+            </p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

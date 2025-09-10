@@ -1,0 +1,10 @@
+# Backend
+Flask
+
+# ML & Data
+numpy
+pandas
+dill
+
+# Render
+gunicorn

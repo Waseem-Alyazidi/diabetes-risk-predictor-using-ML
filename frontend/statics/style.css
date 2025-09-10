@@ -1,0 +1,111 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #83a4d4, #b6fbff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    background: white;
+    padding: 30px 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+p {
+    font-size: 0.95em;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px 15px;
+    border-radius: 8px;
+    background: white;
+    border: 1px solid #999999;
+    font-size: 1em;
+    outline: none;
+    transition: all 0.2s ease-in-out;
+}
+
+input:focus, select:focus {
+    border-color: #007BFF;
+    box-shadow: 0 0 5px rgba(0,123,255,0.5);
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 1em;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#result {
+    margin-top: 20px;
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+/* Risk colors */
+.low { color: green; }
+.medium { color: orange; }
+.high { color: red; }
+.danger { color: #530c0c;}
+
+.footer {
+    margin-top: 30px;
+    padding: 15px;
+    background: white;
+    text-align: center;
+    border-top: 1px solid #ddd;
+}
+
+.footer .disclaimer {
+    color: #555;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+
+.footer .copyright {
+    color: #888;
+    font-size: 0.8rem;
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+    .container {
+        padding: 20px;
+        width: 90%;
+    }
+}
