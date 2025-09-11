@@ -40,9 +40,11 @@ Diabetes Risk Predictor/
 │       └── index.html
 ├── notebook/
 │   └── train_model.ipynb
+├── .gitignore
+├── LICENSE.txt
 ├── README.md
 ├── requirements.txt
-└── LICENSE.txt
+└── runtime.txt
 
 ```
 
@@ -183,7 +185,7 @@ This project is protected under a custom license.
 - Contributions (suggestions, improvements, bug reports) are welcome.
 - Redistribution or commercial use is prohibited.
 
-See the [LICENSE.txt](LICENSE.txt) file for full details.
+See the [LICENSE](LICENSE.txt) file for full details.
 
 ---
 
