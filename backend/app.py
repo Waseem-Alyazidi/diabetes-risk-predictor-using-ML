@@ -80,7 +80,6 @@ def home():
 
 @app.route("/predict", methods=["POST"])
 def predict():
-    import traceback
     data = request.json
 
     required_fields = ["age", "height", "weight", "bp", "glucose", "activity", "diet", "family_history"]
@@ -104,7 +103,7 @@ def predict():
         if prediction not in [0, 1, 2, 3, 4]:
             prediction = -1
     except Exception as e:
-        return jsonify({"error": str(traceback.format_exc())}), 500
+        return jsonify({"error": str(e)}), 500
     return jsonify({"risk_level": int(prediction)})
 
 if __name__ == "__main__":
