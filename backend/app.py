@@ -43,12 +43,12 @@ Date
     2025-09-09.
 """
 
-import numpy as np
-import dill # type: ignore
+import sys, types
+from collections import Counter as _Counter
+import dill
 from pathlib import Path
-from collections import Counter # For handel dill "name 'Counter' is not defined" error
 from flask import Flask, request, jsonify, render_template
-from utils import calculate_bmi, data_encoding # type: ignore
+from utils import calculate_bmi, data_encoding
 
 app = Flask(__name__, template_folder=r"../frontend/templates", static_folder=r"../frontend/statics")
 
@@ -62,7 +62,18 @@ except FileNotFoundError:
     raise RuntimeError(f"Model file not found at {MODEL_PATH}.\n")
 except Exception as e:
     raise RuntimeError(f"Failed to load model: {e}")
-    
+
+mod_name = model.__class__.__module__ 
+mod = sys.modules.get(mod_name)
+if mod is None:
+    mod = types.ModuleType(mod_name)
+    sys.modules[mod_name] = mod
+
+import numpy as np
+mod.__dict__['np'] = np
+mod.__dict__['Counter'] = _Counter
+
+
 @app.route("/")
 def home():
     return render_template("index.html")
