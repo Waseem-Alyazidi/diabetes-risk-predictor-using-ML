@@ -26,7 +26,7 @@ document.getElementById("risk-form").addEventListener("submit", async function(e
         } else {
             const riskMap = {
                 0: { text: "Low Risk (5 years)", class: "low" },
-                1: { text: "Potrntial Risk (5 years)", class: "medium" },
+                1: { text: "Potential Risk (5 years)", class: "medium" },
                 2: { text: "Medium Risk (5 years)", class: "medium" },
                 3: { text: "High Risk (5 years)", class: "high" },
                 4: { text: "Dangerous Risk (5 years)", class: "danger" }
